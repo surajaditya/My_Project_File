@@ -1,0 +1,363 @@
+<?php include 'include/header.php';?>
+<body>
+	<!-- HEADER -->
+	<?php include 'include/navbar.php';?>
+	<!-- /HEADER -->
+
+	<!-- NAVIGATION -->
+	
+
+	<!-- HOME -->
+	<div id="home">
+		<!-- container -->
+		<div class="homesliderboxes">
+			<!-- home wrap -->
+			<div class="home-wrap">
+				<!-- home slick -->
+				<div id="home-slick">
+					<!-- banner -->
+					<?php 
+					include 'include/database.php';
+					$query="select * from banner";
+					$result=mysqli_query($con,$query);
+					while($row=mysqli_fetch_array($result)){
+					$img=$row['banner_image'];
+					?>
+					<div class="banner banner-1">
+						<img src="<?php echo $img;  ?>" alt="" height="400px">
+					</div>
+					<?php } ?>
+					<!-- /banner -->
+
+					<!-- banner ->
+					<div class="banner banner-1">
+						<img src="./img/banner01.jpg" alt="">
+					</div>
+					<!-- /banner -->
+
+					<!-- banner ->
+					<div class="banner banner-1">
+						<img src="./img/banner01.jpg" alt="">
+					</div>
+					<!-- /banner -->
+				</div>
+				<!-- /home slick -->
+			</div>
+			<!-- /home wrap -->
+			<div class="right-bannerss">
+			<img src="img/adss.jpg"/>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /HOME -->
+
+	<!-- section -->
+	<div class="section bandredssgray">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section-title -->
+				<div class="col-md-12">
+				<div class="col-md-3">
+				<div class="brande">
+				 <img src="./img/band-img.png" alt="">
+				</div>
+				</div>
+				 <div class="col-md-9">
+				<ul>
+				<li><img src="img/brands.jpg"></li>
+				
+				</ul>
+				</div>
+				</div></div></div></div>
+	<!-- /section -->
+
+	<!-- section -->
+	<div class="section mydealsw">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section-title -->
+				<div class="">
+					<div class="section-title">
+						<h2 class="title">Deals Of The Day</h2>
+						<div class="pull-right">
+						
+							<div class="product-slick-dots-1 custom-dots"></div>
+						<a href="#" class="collectionss">More Collection</a>
+						</div>
+					</div>
+				</div>
+				<!-- /section-title -->
+
+				<!-- banner -->
+				
+				<!-- /banner -->
+
+				<!-- Product Slick -->
+				<div class="col-md-12">
+					<div class="row">
+						<div >
+        <div id="thumbnail-slider">
+            <div class="inner prods1">
+                <ul>
+				<?php 
+					include 'include/database.php';
+					$query="select * from details where product_type='deals_of_the_day'";
+					$result=mysqli_query($con,$query);
+					while($row=mysqli_fetch_array($result)){
+					$imageurlstr=$row['imageurlstr'];
+					$offers=$row['offers'];
+					$title=$row['title'];
+					$price=$row['price'];
+					$product_type=$row['product_type'];
+					$product_no=$row['product_no'];
+					?>
+                    <li>
+                        <div class="prodicus">
+						<a class="thumb" href="product-page.php?product=<?php echo $product_no;?>">
+						<img src="<?php echo $imageurlstr;  ?>"/>
+<span class="discounts"><?php echo $offers;  ?></span>
+						</a>
+						<div class="prodetail">
+						<h4><?php echo $title;  ?></h4>
+						<div>
+						<span class="oldpr">$500</span>
+						<span class="new">$<?php echo $price;  ?></span>
+						</div>
+						</div>
+						
+						<div class="product-btns">
+										<button class="primary-btn add-to-cart" tabindex="-1"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+										<button class="main-btn icon-btn" tabindex="-1"><i class="fa fa-heart"></i> Add to Wishlist</button>
+									</div>
+						</div>
+						
+                    </li>
+
+					<?php } ?>
+
+
+					
+                </ul>
+            </div>
+        </div>
+       
+
+    </div>
+					</div>
+				</div>
+				<!-- /Product Slick -->
+			</div>
+			<!-- /row -->
+
+			<!-- row -->
+			
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /section -->
+<div class="section mydealsw">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section-title -->
+				<div class="">
+					<div class="section-title">
+						<h2 class="title">Latest Designer Dresses </h2>
+						<div class="pull-right">
+						
+							<div class="product-slick-dots-1 custom-dots"></div>
+						<a href="#" class="collectionss">More Collection</a>
+						</div>
+					</div>
+				</div>
+				<!-- /section-title -->
+
+				<!-- banner -->
+				
+				<!-- /banner -->
+
+				<!-- Product Slick -->
+				<div class="col-md-12">
+					<div class="row">
+						<div >
+        <div id="thumbnail-slider">
+            <div class="inner prods1">
+                <ul>
+                    <?php 
+					include 'include/database.php';
+					$query="select * from details where product_type='latest_designer'";
+					$result=mysqli_query($con,$query);
+					while($row=mysqli_fetch_array($result)){
+					$imageurlstr=$row['imageurlstr'];
+					$offers=$row['offers'];
+					$title=$row['title'];
+					$price=$row['price'];
+					?>
+                    <li>
+                        <div class="prodicus">
+						<a class="thumb" href="#">
+						<img src="<?php echo $imageurlstr;  ?>"/>
+<span class="discounts"><?php echo $offers;  ?></span>
+						</a>
+						<div class="prodetail">
+						<h4><?php echo $title;  ?></h4>
+						<div>
+						<span class="oldpr">$500</span>
+						<span class="new">$<?php echo $price;  ?></span>
+						</div>
+						</div>
+						
+						<div class="product-btns">
+										<button class="primary-btn add-to-cart" tabindex="-1"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+										<button class="main-btn icon-btn" tabindex="-1"><i class="fa fa-heart"></i> Add to Wishlist</button>
+									</div>
+						</div>
+						
+                    </li>
+
+					<?php } ?>
+
+                </ul>
+            </div>
+        </div>
+       
+
+    </div>
+					</div>
+				</div>
+				<!-- /Product Slick -->
+			</div>
+			<!-- /row -->
+
+			<!-- row -->
+			
+		</div>
+		<!-- /container -->
+	</div>
+	<div class="section mydealsw">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section-title -->
+				<div class="">
+					<div class="section-title">
+						<h2 class="title">Recommended by AGOG </h2>
+						<div class="pull-right">
+						
+							<div class="product-slick-dots-1 custom-dots"></div>
+						<a href="#" class="collectionss">More Collection</a>
+						</div>
+					</div>
+				</div>
+				<!-- /section-title -->
+
+				<!-- banner -->
+				
+				<!-- /banner -->
+
+				<!-- Product Slick -->
+				<div class="col-md-12">
+					<div class="row">
+						<div >
+        <div id="thumbnail-slider">
+            <div class="inner prods1">
+                <ul>
+                    <?php 
+					include 'include/database.php';
+					$query="select * from details where product_type='recommended'";
+					$result=mysqli_query($con,$query);
+					while($row=mysqli_fetch_array($result)){
+					$imageurlstr=$row['imageurlstr'];
+					$offers=$row['offers'];
+					$title=$row['title'];
+					$price=$row['price'];
+					?>
+                    <li>
+                        <div class="prodicus">
+						<a class="thumb" href="#">
+						<img src="<?php echo $imageurlstr;  ?>"/>
+<span class="discounts"><?php echo $offers;  ?></span>
+						</a>
+						<div class="prodetail">
+						<h4><?php echo $title;  ?></h4>
+						<div>
+						<span class="oldpr">$500</span>
+						<span class="new">$<?php echo $price;  ?></span>
+						</div>
+						</div>
+						
+						<div class="product-btns">
+										<button class="primary-btn add-to-cart" tabindex="-1"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+										<button class="main-btn icon-btn" tabindex="-1"><i class="fa fa-heart"></i> Add to Wishlist</button>
+									</div>
+						</div>
+						
+                    </li>
+
+					<?php } ?>
+
+                </ul>
+            </div>
+        </div>
+       
+
+    </div>
+					</div>
+				</div>
+				<!-- /Product Slick -->
+			</div>
+			<!-- /row -->
+
+			<!-- row -->
+			
+		</div>
+		<!-- /container -->
+	</div>
+	<div class="section bandredss">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section-title -->
+				<div class="col-md-12">
+				<div class="col-md-3">
+				<img src="img/logo2.png"/>
+				A woman’s wardrobe is her opportunity to stand out and make a lasting first impression. Launched in 2018, AGOG (Attri Retails) offers a wide range of apparel to fit any woman’s unique sense of style.
+				</div>
+				 <div class="col-md-9">
+				<ul>
+				<li><img src="img/ads1.png"/></li>
+				<li><img src="img/ads1.png"/></li>
+				<li><img src="img/ads1.png"/></li>
+				</ul>
+				</div>
+				</div></div></div></div>
+<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section-title -->
+				<div class="col-md-12">
+				<?php 
+					include 'include/database.php';
+					$query="select * from home_contant";
+					$result=mysqli_query($con,$query);
+					while($row=mysqli_fetch_array($result)){
+					$home_contant_description=$row['home_contant_description'];
+					?>
+                    <?php echo $home_contant_description;  ?>
+
+					<?php } ?>
+
+				</div></div></div></div>
+	<!-- FOOTER -->
+<?php include 'include/footer.php';?>
